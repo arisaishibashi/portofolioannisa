@@ -15,6 +15,7 @@ SECONDARY_COLOR = "#4E342E" # brown
 BG_COLOR = "#FFF8E7"        # very light yellow
 TEXT_COLOR = "#4E342E"      # <-- tambahkan '#'
 
+
 # ---------- Global CSS ----------
 st.markdown(
     f"""
@@ -68,27 +69,36 @@ st.markdown(
         text-decoration: none; margin-right: 20px;
     }}
     .nav-link:hover {{ color: {SECONDARY_COLOR}; cursor: pointer; }}
+
+    /* Header atas Streamlit */
+    header[data-testid="stHeader"] {{
+        background-color: #FFF8E7;
+    }}
+    header[data-testid="stHeader"] * {{
+        color: white !important;
+    }}
     </style>
     """,
     unsafe_allow_html=True,
 )
 
+
 # ---------- Data ----------
 projects = [
-    {
-        "id": "warung_seblakin",
-        "title": "Warung Seblakin",
-        "summary": "Website untuk memesan makanan secara online dengan fitur utama.",
-    },
     {
         "id": "web_deteksi_ikan_cnn",
         "title": "Web Deteksi Ikan Air Tawar Menggunakan CNN",
         "summary": "Website yang menggunakan CNN untuk mendeteksi jenis ikan air tawar dari gambar.",
     },
+    {   
+        "id": "warung_seblakin",
+        "title": "Warung Seblakin",
+        "summary": "Website untuk memesan makanan secara online dengan fitur utama.",
+    },
     {
-        "id": "aplikasi_manajemen_tugas",
-        "title": "Aplikasi Manajemen Tugas Harian",
-        "summary": "Aplikasi web untuk membantu mengelola tugas harian dengan fitur lengkap.",
+        "id": "aplikasi_hewan",
+        "title": "Aplikasi Pengenalan Hewan Berdasarkan Makanannya",
+        "summary": "Aplikasi berbasis android untuk belajar mengenal hewan berdasarkan makanannya.",
     },
 ]
 
@@ -164,9 +174,45 @@ def project_detail_page(project_id: str):
 
     st.markdown(f'<h1 class="title">{project["title"]}</h1>', unsafe_allow_html=True)
     st.write("---")
+    
+    # ---- Web Deteksi Ikan CNN ----
+    if project_id == "web_deteksi_ikan_cnn":
+        images = [
+            ("assets/webikan/halaman_utama.png", "Tampilan Halaman Utama"),
+            ("assets/webikan/infoweb.png", "Tampilan Halaman Informasi Web"),
+            ("assets/webikan/deteksi.png", "Tampilan Halaman Fish Recognition"),
+            ("assets/webikan/riwayatdeteksi.png", "Tampilan Halaman Riwayat Deteksi"),
+        ]
+        render_slider(images, state_key="fish_idx")
 
+        st.write("---")
+        st.subheader("ℹ️ Tentang Proyek")
+        st.markdown("Website deteksi ikan air tawar berbasis CNN dengan fitur unggah gambar, klasifikasi, dan riwayat deteksi.")
+
+        st.subheader("⚙️ Teknologi yang Digunakan")
+        st.markdown(
+            """
+            - Python (Streamlit) 
+            - Convolutional Neural Network
+            - Transfer Learning MobileNetV2 
+            - Figma (UI/UX Design)
+            """
+        )
+        
+        st.subheader("🌐 Tautan Proyek")
+        st.markdown(
+            """
+            🔗 Kunjungi Website Deteksi Ikan (https://deteksi-air-tawar.streamlit.app/)
+            """,
+            unsafe_allow_html=True,
+        )
+
+        if st.button("Kembali ke Halaman Utama", key="back_fish"):
+            set_query_params({})
+            st.experimental_rerun()
+            
     # ---- Warung Seblakin ----
-    if project_id == "warung_seblakin":
+    elif project_id == "warung_seblakin":
         images = [
             ("assets/warung_seblakin/halaman_utama.png", "Tampilan Halaman Utama"),
             ("assets/warung_seblakin/menu.png", "Tampilan Semua Menu"),
@@ -208,60 +254,57 @@ def project_detail_page(project_id: str):
             set_query_params({})
             st.experimental_rerun()
 
-    # ---- Web Deteksi Ikan CNN ----
-    elif project_id == "web_deteksi_ikan_cnn":
+
+    # ---- Aplikasi hewan (placeholder singkat) ----
+    elif project_id == "aplikasi_hewan":
         images = [
-            ("assets/webikan/halaman_utama.png", "Tampilan Halaman Utama"),
-            ("assets/webikan/infoweb.png", "Tampilan Halaman Informasi Web"),
-            ("assets/webikan/deteksi.png", "Tampilan Halaman Fish Recognition"),
-            ("assets/webikan/riwayatdeteksi.png", "Tampilan Halaman Riwayat Deteksi"),
+            ("assets/hewan/home.jpeg", "Tampilan Halaman Utama"),
+            ("assets/hewan/pengaturan.jpeg", "Tampilan Halaman Pengaturan"),
+            ("assets/hewan/infoapp.jpeg", "Tampilan Halaman Informasi Aplikasi"), 
+            ("assets/hewan/carabermain.jpeg", "Tampilan Halaman Cara Bermain"),
+            ("assets/hewan/Menu.jpeg", "Tampilan Halaman Menu"),
+            ("assets/hewan/materiherbi.jpeg", "Tampilan Halaman Materi Herbivora"),
+            ("assets/hewan/hewanherbi.jpeg", "Tampilan Halaman Hewan Herbivora"),
+            ("assets/hewan/materikarni.jpeg", "Tampilan Halaman Materi Karnivora"),
+            ("assets/hewan/hewankani.jpeg", "Tampilan Halaman Hewan Karnivora"),
+            ("assets/hewan/materiomni.jpeg", "Tampilan Halaman Materi Omnivora"),
+            ("assets/hewan/hewanomni.jpeg", "Tampilan Halaman Hewan Omnivora"),
+            ("assets/hewan/menugame.jpeg", "Tampilan Halaman Menu Permainan"),
+            ("assets/hewan/benar.jpeg", "Tampilan Halaman Pada Kuis Ketika Menjawab Benar"),
+            ("assets/hewan/salah.jpeg", "Tampilan Halaman Pada Kuis Ketika Menjawab Salah"),
+            ("assets/hewan/game.jpeg", "Tampilan Halaman Permainan"),
+            ("assets/hewan/gamehebi.jpeg", "Tampilan Halaman Permainan Tangkap Hewan"),
+            ("assets/hewan/arkambing.jpeg", "Tampilan Halaman AR Kambing"),
+            ("assets/hewan/arsinga.jpeg", "Tampilan Halaman AR Singa"),
         ]
-        render_slider(images, state_key="fish_idx")
+        render_slider(images, state_key="hewan")
 
         st.write("---")
         st.subheader("ℹ️ Tentang Proyek")
-        st.markdown("Website deteksi ikan air tawar berbasis CNN dengan fitur unggah gambar, klasifikasi, dan riwayat deteksi.")
+        st.markdown("""Aplikasi ini merupakan sebuah media edukasi interaktif yang dirancang untuk memperkenalkan hewan berdasarkan jenis makanannya, yaitu herbivora, karnivora, dan omnivora. 
+                    Di dalamnya terdapat materi pembelajaran yang disajikan secara sederhana dan menarik, fitur Augmented Reality (AR) yang memungkinkan pengguna memindai gambar untuk menampilkan hewan dalam bentuk 3D, 
+                    serta kuis interaktif untuk menguji pemahaman pengguna. 
+                    Selain itu, aplikasi ini juga dilengkapi dengan mini game tangkap hewan sesuai makanannya sehingga proses belajar menjadi lebih menyenangkan dan interaktif.""")
 
         st.subheader("⚙️ Teknologi yang Digunakan")
         st.markdown(
             """
-            - Python (Flask/Streamlit) / PHP (sesuaikan implementasi)
-            - Machine Learning (CNN)
-            - HTML, CSS
+            - C# 
+            - Unity
+            - Augmented Reality (AR)
             - Figma (UI/UX Design)
             """
         )
-
-        if st.button("Kembali ke Halaman Utama", key="back_fish"):
-            set_query_params({})
-            st.experimental_rerun()
-
-    # ---- Aplikasi Manajemen Tugas (placeholder singkat) ----
-    # ---- Web Deteksi Ikan CNN ----
-    elif project_id == "web_deteksi_ikan_cnn":
-        images = [
-            ("assets/hewan/halaman_utama.png", "Tampilan Halaman Utama"),
-            ("assets/hewan/infoweb.png", "Tampilan Halaman Informasi Web"),
-            ("assets/hewan/deteksi.png", "Tampilan Halaman Fish Recognition"),
-            ("assets/hewan/riwayatdeteksi.png", "Tampilan Halaman Riwayat Deteksi"),
-        ]
-        render_slider(images, state_key="fish_idx")
-
-        st.write("---")
-        st.subheader("ℹ️ Tentang Proyek")
-        st.markdown("Website deteksi ikan air tawar berbasis CNN dengan fitur unggah gambar, klasifikasi, dan riwayat deteksi.")
-
-        st.subheader("⚙️ Teknologi yang Digunakan")
+        
+        st.subheader("🌐 Tautan Proyek")
         st.markdown(
             """
-            - Python (Flask/Streamlit) / PHP (sesuaikan implementasi)
-            - Machine Learning (CNN)
-            - HTML, CSS
-            - Figma (UI/UX Design)
-            """
+            🔗 Unduh aplikasi (Drive) (https://drive.google.com/file/d/11uc9LSZngrUM0da5BCk2rb62yGsMrZWu/view?usp=drive_link)
+            """,
+            unsafe_allow_html=True,
         )
 
-        if st.button("Kembali ke Halaman Utama", key="back_fish"):
+        if st.button("Kembali ke Halaman Utama", key="back_hewan"):
             set_query_params({})
             st.experimental_rerun()
             
@@ -271,7 +314,7 @@ def data_diri_page():
     col1, col2 = st.columns([1, 2])
     with col1:
         st.image(
-            "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80",
+            "assets/aku.jpeg",
             width=200,
         )
     with col2:
