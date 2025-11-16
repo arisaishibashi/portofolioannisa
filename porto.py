@@ -231,10 +231,8 @@ def project_detail_page(project_id: str):
         st.subheader("ℹ️ Tentang Proyek")
         st.markdown(
             """
-            Website ini merupakan platform pemesanan makanan online yang saya kembangkan sebagai bagian dari proyek mata kuliah Pengenalan Proyek Perangkat Lunak. 
-            Proyek ini dikerjakan berdasarkan kebutuhan klien yang memiliki usaha warung seblak, sehingga seluruh fitur yang dirancang menyesuaikan dengan alur bisnis dan permintaan klien.
-            Website ini memfasilitasi pelanggan untuk melihat menu, melakukan pemesanan, serta mendapatkan informasi terkait produk secara lebih mudah. 
-            Dari sisi klien, website ini membantu mengelola data pesanan dengan lebih teratur dan efisien.
+            Website ini merupakan platform pemesanan makanan online. Proyek ini dikerjakan berdasarkan kebutuhan klien yang memiliki usaha warung seblak, sehingga seluruh fitur yang dirancang menyesuaikan dengan alur bisnis dan permintaan klien.
+            Website ini memfasilitasi pelanggan untuk melihat menu, melakukan pemesanan, serta mendapatkan informasi terkait produk secara lebih mudah. Dari sisi klien, website ini membantu mengelola data pesanan dengan lebih teratur dan efisien.
             Proses pengembangan dilakukan mulai dari tahap analisis kebutuhan, perancangan, implementasi, hingga pengujian. 
             Hasil akhir website ini tidak hanya menjadi solusi digital bagi klien, tetapi juga menjadi pengalaman berharga bagi saya dalam mengaplikasikan teori pengembangan perangkat lunak ke dalam praktik nyata.
             """
@@ -375,3 +373,4 @@ elif page == "Data Diri":
     data_diri_page()
 elif page == "Informasi Kontak":
     kontak_page()
+
