@@ -321,9 +321,13 @@ def data_diri_page():
                 <p><strong>Pendidikan:</strong> S1 Informatika</p>
                 <p><strong>Keahlian:</strong></p>
                 <ul>
-                    <li>Python, JavaScript, HTML/CSS</li>
+                    <li>Python, java, JavaScript, HTML/CSS</li>
                     <li>Machine Learning & Deep Learning</li>
-                    <li>Web Development (Streamlit, React)</li>
+                    <li>Web Development</li>
+                    <li>UI/UX</li>
+                    <li>MySQL, PostgreSQL</li> 
+                    <li>Microsoft Office</li>
+                    
                 </ul>
             </div>
             """,
@@ -370,6 +374,7 @@ elif page == "Data Diri":
     data_diri_page()
 elif page == "Informasi Kontak":
     kontak_page()
+
 
 
 
