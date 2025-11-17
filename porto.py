@@ -327,7 +327,6 @@ def data_diri_page():
                     <li>UI/UX</li>
                     <li>MySQL, PostgreSQL</li> 
                     <li>Microsoft Office</li>
-                    
                 </ul>
             </div>
             """,
@@ -374,6 +373,7 @@ elif page == "Data Diri":
     data_diri_page()
 elif page == "Informasi Kontak":
     kontak_page()
+
 
 
 
