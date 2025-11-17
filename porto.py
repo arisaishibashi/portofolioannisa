@@ -135,13 +135,13 @@ def render_slider(images: list, state_key: str):
 
 # ---------- Pages ----------
 def main_page():
-    st.markdown('<h1 class="title">Halo, Selamat datang di portofolio saya! </h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="title">Halo, Selamat datang di portofolio Annisa 🌸 </h1>', unsafe_allow_html=True)
     st.markdown(
         """
         <p class="subtitle">
-        Perkenalkan, saya Annisa Solehah. Saya memiliki ketertarikan pada dunia teknologi, khususnya pada pengembangan aplikasi, desain antarmuka, dan pengolahan data. 
-        Saya terus mengembangkan kemampuan melalui berbagai proyek, pelatihan, dan eksplorasi mandiri. Portofolio ini saya susun sebagai rangkuman perjalanan 
-        belajar dan karya yang telah saya buat. Semoga dapat memberikan gambaran mengenai kemampuan dan gaya kerja saya.
+        Salam kenal semuanya! Aku Annisa Solehah 🌸, seseorang yang tertarik dengan dunia teknologi, khususnya pengembangan aplikasi, desain antarmuka, dan pengolahan data 💻✨.
+        Aku terus mengembangkan kemampuan melalui berbagai proyek, pelatihan, dan eksplorasi mandiri. 
+        Portofolio ini aku susun sebagai rangkuman perjalanan belajar dan karya-karya yang telah aku buat 🌿.
         </p>
         """,
         unsafe_allow_html=True,
@@ -370,6 +370,7 @@ elif page == "Data Diri":
     data_diri_page()
 elif page == "Informasi Kontak":
     kontak_page()
+
 
 
 
