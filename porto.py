@@ -140,11 +140,9 @@ def main_page():
         """
         <p class="subtitle">
         Perkenalkan, saya Annisa Solehah. 
-        Saya memiliki ketertarikan pada pengembangan teknologi berbasis web dan kecerdasan buatan.
-        Bidang eksplorasi saya meliputi pembuatan deteksi berbasis CNN, 
-        desain tampilan web dan aplikasi, pembuatan model deteksi, 
-        pengembangan aplikasi Android sederhana, serta sedang memulai perjalanan di bidang data analysis.
-        Semoga portofolio ini bisa menjadi jendela kecil untuk mengenal saya lebih dekat.
+        Perkenalkan, saya Annisa Solehah. Saya memiliki ketertarikan pada dunia teknologi, khususnya pada pengembangan aplikasi, desain antarmuka, dan pengolahan data. 
+        Saya terus mengembangkan kemampuan melalui berbagai proyek, pelatihan, dan eksplorasi mandiri. Portofolio ini saya susun sebagai rangkuman perjalanan 
+        belajar dan karya yang telah saya buat. Semoga dapat memberikan gambaran mengenai kemampuan dan gaya kerja saya.
         </p>
         """,
         unsafe_allow_html=True,
@@ -373,4 +371,5 @@ elif page == "Data Diri":
     data_diri_page()
 elif page == "Informasi Kontak":
     kontak_page()
+
 
