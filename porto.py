@@ -139,7 +139,7 @@ def main_page():
     st.markdown(
         """
         <p class="subtitle">
-        Salam kenal semuanya! Aku Annisa Solehah 🌸, seseorang yang tertarik dengan dunia teknologi, khususnya pengembangan aplikasi, desain antarmuka, dan pengolahan data 💻✨.
+        Salam kenal semuanya! Aku Annisa Solehah 🧕, seseorang yang tertarik dengan dunia teknologi, khususnya pengembangan aplikasi, desain antarmuka, dan pengolahan data 💻✨.
         Aku terus mengembangkan kemampuan melalui berbagai proyek, pelatihan, dan eksplorasi mandiri. 
         Portofolio ini aku susun sebagai rangkuman perjalanan belajar dan karya-karya yang telah aku buat 🌿.
         </p>
@@ -373,6 +373,7 @@ elif page == "Data Diri":
     data_diri_page()
 elif page == "Informasi Kontak":
     kontak_page()
+
 
 
 
