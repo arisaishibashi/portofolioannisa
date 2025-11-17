@@ -139,7 +139,6 @@ def main_page():
     st.markdown(
         """
         <p class="subtitle">
-        Perkenalkan, saya Annisa Solehah. 
         Perkenalkan, saya Annisa Solehah. Saya memiliki ketertarikan pada dunia teknologi, khususnya pada pengembangan aplikasi, desain antarmuka, dan pengolahan data. 
         Saya terus mengembangkan kemampuan melalui berbagai proyek, pelatihan, dan eksplorasi mandiri. Portofolio ini saya susun sebagai rangkuman perjalanan 
         belajar dan karya yang telah saya buat. Semoga dapat memberikan gambaran mengenai kemampuan dan gaya kerja saya.
@@ -371,5 +370,6 @@ elif page == "Data Diri":
     data_diri_page()
 elif page == "Informasi Kontak":
     kontak_page()
+
 
 
