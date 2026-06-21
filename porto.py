@@ -3,7 +3,7 @@ from urllib.parse import urlencode
 
 # ---------- Page Config ----------
 st.set_page_config(
-    page_title="Portofolio Saya",
+    page_title="Anns Journeys",
     page_icon="🌸",
     layout="centered",
     initial_sidebar_state="expanded",
